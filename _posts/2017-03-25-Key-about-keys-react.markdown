@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Key about Key - ReactJS[WIP]"
+title:  "Key about Key - React[WIP]"
 date:   2017-05-23 06:46:34 -0400
 categories: jekyll update
 ---
