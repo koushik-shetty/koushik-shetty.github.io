@@ -1,21 +1,19 @@
 ---
 layout: post
-title:  "Key about Keys"
-date:   2017-03-25 06:46:34 -0400
+title:  "Key about Keys[WIP]"
+date:   2017-05-23 06:46:34 -0400
 categories: jekyll update
 ---
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
+React components can have a special `prop` called `key`. This prop is important when a __array__ of components is rendered, in a loop. i.e they are used when you turn an array of your data to a list of react elements.
 
-To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
+This prop serves one important reason: __Caching__  
+`Key` provides the identity to a component within the list and react uses this identity to cache the component while rendering. if the key is not present then it renders the DOM that the component represents else uses the already rendered component.
 
-Jekyll also offers powerful support for code snippets:
+#### __Why is `key` important?__  
+As mentioned above `key` helps in caching. This is therefore not usable prop for the component, meaning that we cannot and should not access it. 
 
-{% highlight ruby %}
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
+{% highlight javascript %}
+<Item key={i} data={data}/>
 {% endhighlight %}
 
 Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
