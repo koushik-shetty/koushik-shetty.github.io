@@ -16,4 +16,4 @@ github_username:  koushik-shetty
 
 # Build settings
 markdown: kramdown
-theme: merlot
+theme: jekyll-theme-merlot
