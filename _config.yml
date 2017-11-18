@@ -6,7 +6,7 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: Mintoos's blog
+title: Koushik Shetty's blog
 email: kou4307@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   Tech and other things
@@ -16,3 +16,4 @@ github_username:  koushik-shetty
 
 # Build settings
 markdown: kramdown
+theme: jekyll-theme-merlot
