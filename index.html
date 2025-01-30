@@ -1,23 +1,83 @@
----
-layout: default
----
-
-<div class="home">
-
-  <h1 class="page-heading">Posts</h1>
-
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ekatva Software</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background: black;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-family: 'Courier New', Courier, monospace;
+            text-shadow: 2px 2px #333;
+        }
+        header h1 .red {
+            color: red;
+        }
+        header p {
+            margin: 10px 0 0;
+            font-size: 1.2em;
+        }
+        .content {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+        .tile {
+            background: white;
+            border: 1px solid #ddd;
+            padding: 20px;
+            width: 30%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+        footer a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header role="banner" aria-label="Ekatva Software Header">
+        <h1><span class="red">Ekatva</span> Software</h1>
+        <p>Decentralized information storage and Id aliasing</p>
+    </header>
+    <div class="content">
+        <div class="tile">
+            <h2>Ekatva.ID</h2>
+            <p>Decentralized information storage and ID aliasing.</p>
+            <p>Store your personal data securely in your custom storage location and use alias to browse the web.</p>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; Ekatva Software 2025</p>
+        <p>Contact us at <a href="mailto:info@ekatva.net">info@ekatva.net</a></p>
+    </footer>
+</body>
+</html>
