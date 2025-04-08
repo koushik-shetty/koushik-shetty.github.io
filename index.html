@@ -47,6 +47,18 @@
             width: 30%;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+        .tile:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        .tile a {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            height: 100%;
         }
         footer {
             background: #333;
@@ -69,7 +81,7 @@
         <p>Coming soon!</p>
     </header>
     <div class="content">
-        <div class="tile">
+        <div class="tile" onclick="window.location.href='asmite.html';">
             <h2>Asmité</h2><p>(Ah-smith-ay)</p>
             <p>Decentralized information storage and ID aliasing.</p>
             <p>Store your personal data securely in your custom storage location and use alias to browse the web.</p>
@@ -83,6 +95,10 @@
             <a href="https://github.com/koushik-shetty" target="_blank">GitHub</a> |
             <a href="https://twitter.com/koushikshettyN3" target="_blank">Twitter</a> |
             <a href="https://www.youtube.com/@EkatvaSoftware" target="_blank">YouTube</a>
+        </p>
+        <p>
+            <a href="privacy.html">Privacy Policy</a> |
+            <a href="terms.html">Terms of Service</a>
         </p>
     </footer>
 </body>
