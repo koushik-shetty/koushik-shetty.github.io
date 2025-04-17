@@ -15,6 +15,7 @@ url: "https://koushik-shetty.github.io" # the base hostname & protocol for your 
 github_username:  koushik-shetty
 twitter_username: KoushikShettyN3
 linkedin: koushik-shetty
+include: [".well-known"]
 
 # Build settings
 markdown: kramdown
