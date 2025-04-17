@@ -1,0 +1,9 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.asmite",
+    "sha256_cert_fingerprints":
+    ["CE:F7:0E:7B:7C:AC:37:DD:AD:4D:C8:BD:75:A0:C9:A8:A1:20:E3:8C:A0:AE:D7:3B:7E:66:F4:44:C7:FF:5A:38"]
+  }
+}]
