@@ -1,92 +1,485 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Asmité - Ekatva Software</title>
+    <title>Asmité - Decentralized Identity & Storage | Ekatva Software</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        * {
             margin: 0;
             padding: 0;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            background: #f4f4f4;
-            color: #333;
+            box-sizing: border-box;
         }
-        header {
-            background: black;
-            color: white;
-            padding: 20px;
-            text-align: center;
-            position: relative;
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #ffffff;
         }
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-            font-family: 'Courier New', Courier, monospace;
-            text-shadow: 2px 2px #333;
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #e6e6e6;
+            z-index: 1000;
+            padding: 1rem 0;
         }
-        header h1 .red {
-            color: red;
-        }
-        .content {
-            flex: 1;
-            padding: 20px;
-            max-width: 800px;
+
+        nav .container {
+            max-width: 1200px;
             margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-        footer {
-            background: #333;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            width: 100%;
-        }
-        footer a {
-            color: #4CAF50;
+
+        nav .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1a1a1a;
             text-decoration: none;
         }
-        .breadcrumb {
-            margin-bottom: 20px;
+
+        nav .logo .accent {
+            color: #ff4500;
         }
-        .breadcrumb a {
-            color: #4CAF50;
+
+        nav .back-link {
+            color: #666;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
         }
-        .product-header {
+
+        nav .back-link:hover {
+            color: #ff4500;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 8rem 0 4rem;
+            background: linear-gradient(135deg, #ff4500 0%, #1a1a1a 100%);
+            color: white;
             text-align: center;
-            margin-bottom: 30px;
         }
-        .product-header h1 {
-            color: #333;
-            font-size: 2.5em;
+
+        .hero .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
         }
-        .product-features {
-            margin: 30px 0;
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
         }
-        .feature {
-            margin-bottom: 20px;
-            padding: 15px;
+
+        .hero .pronunciation {
+            font-size: 1rem;
+            opacity: 0.8;
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+
+        .hero .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            margin-bottom: 3rem;
+            font-weight: 400;
+        }
+
+        /* Content Section */
+        .content {
+            padding: 6rem 0;
+            background: #f8f9fa;
+        }
+
+        .content .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .feature-card {
             background: white;
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e6e6e6;
         }
+
+        .feature-card .icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #ff4500, #1a1a1a);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            color: white;
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+        }
+
+        .feature-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .main-content {
+            background: white;
+            border-radius: 12px;
+            padding: 3rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e6e6e6;
+        }
+
+        .main-content h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: #1a1a1a;
+        }
+
+        .main-content h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 2rem 0 1rem;
+            color: #1a1a1a;
+        }
+
+        .main-content p {
+            color: #666;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .main-content ul {
+            color: #666;
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+        }
+
+        .main-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #ff4500, #1a1a1a);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+        }
+
+        .highlight-box h3 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .highlight-box p {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .cta-section {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 2rem;
+            background: #f8f9fa;
+            border-radius: 12px;
+        }
+
         .cta-button {
             display: inline-block;
-            background: #4CAF50;
+            padding: 1rem 2rem;
+            background: #ff4500;
             color: white;
-            padding: 12px 24px;
             text-decoration: none;
-            border-radius: 4px;
-            font-weight: bold;
-            margin-top: 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 69, 0, 0.4);
         }
+
         .cta-button:hover {
-            background: #45a049;
+            background: #e63e00;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 69, 0, 0.6);
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 4rem 0 2rem;
+        }
+
+        footer .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+
+        footer .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        footer .footer-section h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #ff4500;
+        }
+
+        footer .footer-section p,
+        footer .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            line-height: 1.6;
+        }
+
+        footer .footer-section a:hover {
+            color: #ff4500;
+        }
+
+        footer .social-links {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        footer .social-links a {
+            padding: 0.5rem 1rem;
+            background: #333;
+            border-radius: 8px;
+            transition: background 0.3s ease;
+        }
+
+        footer .social-links a:hover {
+            background: #ff4500;
+        }
+
+        footer .footer-bottom {
+            border-top: 1px solid #333;
+            padding-top: 2rem;
+            text-align: center;
+            color: #999;
+        }
+
+        footer .footer-bottom a {
+            color: #999;
+            text-decoration: none;
+            margin: 0 1rem;
+        }
+
+        footer .footer-bottom a:hover {
+            color: #ff4500;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .main-content {
+                padding: 2rem;
+            }
         }
     </style>
 </head>
+
+<body>
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo"><span class="accent">Ekatva</span> Software</a>
+            <a href="index.html" class="back-link">← Back to Home</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Asmité</h1>
+            <p class="pronunciation">(ah-smith-ay)</p>
+            <p class="subtitle">Decentralized Identity & Secure Data Storage</p>
+        </div>
+    </section>
+
+    <section class="content">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="icon">🔐</div>
+                    <h3>Secure Storage</h3>
+                    <p>Your data is encrypted and stored in your chosen location, giving you complete control over your
+                        information.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="icon">🆔</div>
+                    <h3>ID Aliasing</h3>
+                    <p>Use secure aliases to browse the web without revealing your true identity or personal
+                        information.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="icon">🌐</div>
+                    <h3>Decentralized</h3>
+                    <p>No central authority controls your data. You decide where and how your information is stored and
+                        accessed.</p>
+                </div>
+            </div>
+
+            <div class="main-content">
+                <h2>Revolutionary Privacy Technology</h2>
+
+                <p>Asmité represents a new paradigm in digital privacy and identity management. In an era where personal
+                    data is constantly harvested and monetized, we're building a solution that puts you back in control.
+                </p>
+
+                <div class="highlight-box">
+                    <h3>Why Asmité?</h3>
+                    <p>Traditional online services collect and store your personal information on their servers, often
+                        without your full knowledge or consent. Asmité flips this model entirely – your data stays with
+                        you, in storage locations you control.</p>
+                </div>
+
+                <h3>Key Features</h3>
+                <ul>
+                    <li><strong>Custom Storage Locations:</strong> Store your data anywhere you choose – your own
+                        server, cloud storage, or local device</li>
+                    <li><strong>Alias System:</strong> Create and manage multiple digital identities for different
+                        purposes</li>
+                    <li><strong>End-to-End Encryption:</strong> Your data is encrypted before it leaves your device</li>
+                    <li><strong>Zero Knowledge Architecture:</strong> We never have access to your unencrypted data</li>
+                    <li><strong>Interoperability:</strong> Works with existing web services through secure proxy
+                        connections</li>
+                </ul>
+
+                <h3>How It Works</h3>
+                <p>Asmité acts as a secure bridge between you and the web. When you interact with online services,
+                    Asmité uses your chosen alias and retrieves only the necessary information from your secure storage,
+                    keeping your real identity and personal data protected.</p>
+
+                <p>The system is designed to be transparent to existing web services while providing you with
+                    unprecedented control over your digital footprint.</p>
+
+                <div class="cta-section">
+                    <h3>Coming Soon</h3>
+                    <p>We're currently in development and will be releasing Asmité soon. Stay tuned for updates!</p>
+                    <a href="mailto:info@ekatva.net" class="cta-button">Get Early Access</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>Email: <a href="mailto:info@ekatva.net">info@ekatva.net</a></p>
+                    <p>Questions about Asmité? We'd love to hear from you.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Follow Development</h3>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/koushik-shetty" target="_blank">LinkedIn</a>
+                        <a href="https://github.com/koushik-shetty" target="_blank">GitHub</a>
+                        <a href="https://twitter.com/koushikshettyN3" target="_blank">Twitter</a>
+                        <a href="https://www.youtube.com/@EkatvaSoftware" target="_blank">YouTube</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Ekatva Software. All rights reserved.</p>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
+<!-- .breadcrumb {
+margin-bottom: 20px;
+}
+.breadcrumb a {
+color: #4CAF50;
+}
+.product-header {
+text-align: center;
+margin-bottom: 30px;
+}
+.product-header h1 {
+color: #333;
+font-size: 2.5em;
+}
+.product-features {
+margin: 30px 0;
+}
+.feature {
+margin-bottom: 20px;
+padding: 15px;
+background: white;
+border-radius: 5px;
+box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.cta-button {
+display: inline-block;
+background: #4CAF50;
+color: white;
+padding: 12px 24px;
+text-decoration: none;
+border-radius: 4px;
+font-weight: bold;
+margin-top: 20px;
+}
+.cta-button:hover {
+background: #45a049;
+}
+</style>
+</head>
+
 <body>
     <header role="banner" aria-label="Ekatva Software Header">
         <h1><span class="red">Ekatva</span> Software</h1>
@@ -95,34 +488,35 @@
         <div class="breadcrumb">
             <a href="index.html">Home</a> &gt; Asmite
         </div>
-        
+
         <div class="product-header">
             <h1>Asmité</h1>
             <p>Advanced Security Management and IT Environment</p>
         </div>
-        
-        <p>Asmité is a comprehensive security management solution designed to protect your digital assets and streamline IT operations.</p>
-        
+
+        <p>Asmité is a comprehensive security management solution designed to protect your digital assets and streamline
+            IT operations.</p>
+
         <div class="product-features">
             <h2>Key Features</h2>
-            
+
             <div class="feature">
                 <h3>Identity solution</h3>
                 <p>Advanced algorithms identify and neutralize security threats before they can impact your systems.</p>
             </div>
-            
+
             <div class="feature">
                 <h3>Real-time Analytics</h3>
                 <p>Get instant insights into your security posture with comprehensive reporting and analytics.</p>
             </div>
         </div>
-        
+
         <div style="text-align: center;">
             <p>Coming soon! Be the first to know when Asmite launches.</p>
             <a href="#" class="cta-button">Request Early Access</a>
         </div>
     </div>
-    
+
     <footer>
         <p>&copy; Ekatva Software 2025</p>
         <p>Contact us at <a href="mailto:info@ekatva.net">info@ekatva.net</a></p>
@@ -138,4 +532,5 @@
         </p>
     </footer>
 </body>
-</html>
+
+</html> -->

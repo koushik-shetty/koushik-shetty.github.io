@@ -1,105 +1,460 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ekatva Software</title>
+    <title>Ekatva Software - Modern Software Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        * {
             margin: 0;
             padding: 0;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            background: #f4f4f4;
-            color: #333;
+            box-sizing: border-box;
         }
-        header {
-            background: black;
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #e6e6e6;
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            text-decoration: none;
+        }
+
+        nav .logo .accent {
+            color: #ff4500;
+        }
+
+        nav .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav .nav-links a {
+            color: #666;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav .nav-links a:hover {
+            color: #ff4500;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 10rem 0 6rem;
+            background: linear-gradient(135deg, #ff4500 0%, #1a1a1a 100%);
             color: white;
-            padding: 20px;
             text-align: center;
             position: relative;
         }
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-            font-family: 'Courier New', Courier, monospace;
-            text-shadow: 2px 2px #333;
-        }
-        header h1 .red {
-            color: red;
-        }
-        header p {
-            margin: 10px 0 0;
-            font-size: 1.2em;
-        }
-        .content {
-            display: flex;
-            justify-content: center;
-            padding: 20px;
-        }
-        .tile {
-            background: white;
-            border: 1px solid #ddd;
-            padding: 20px;
-            width: 30%;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            cursor: pointer;
-        }
-        .tile:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-        .tile a {
-            text-decoration: none;
-            color: inherit;
-            display: block;
-            height: 100%;
-        }
-        footer {
-            background: #333;
-            color: white;
-            text-align: center;
-            padding: 10px;
+
+        .hero::before {
+            content: '';
             position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
             bottom: 0;
-            width: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="white" opacity="0.1"><path d="M0,0 C150,100 350,0 500,50 C650,100 850,0 1000,50 L1000,100 L0,100 Z"></path></svg>');
+            background-size: 100% 100px;
+            background-repeat: no-repeat;
+            background-position: bottom;
         }
-        footer a {
-            color: #4CAF50;
+
+        .hero .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            margin-bottom: 3rem;
+            font-weight: 400;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: #ff4500;
+            color: white;
             text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 69, 0, 0.4);
+        }
+
+        .cta-button:hover {
+            background: #e63e00;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 69, 0, 0.6);
+        }
+
+        /* Products Section */
+        .products {
+            padding: 8rem 0;
+            background: #f8f9fa;
+        }
+
+        .products .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            color: #1a1a1a;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2.5rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 1px solid #e6e6e6;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-card .icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #ff4500, #1a1a1a);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .product-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+        }
+
+        .product-card .description {
+            color: #666;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .product-card .learn-more {
+            color: #ff4500;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .product-card .learn-more:hover {
+            color: #e63e00;
+        }
+
+        /* About Section */
+        .about {
+            padding: 8rem 0;
+            background: white;
+        }
+
+        .about .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-content h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: #1a1a1a;
+        }
+
+        .about-content p {
+            color: #666;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .about-image {
+            text-align: center;
+        }
+
+        .about-image .placeholder {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, #ff4500 0%, #1a1a1a 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 4rem 0 2rem;
+        }
+
+        footer .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #ff4500;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            line-height: 1.6;
+        }
+
+        .footer-section a:hover {
+            color: #ff4500;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            padding: 0.5rem;
+            background: #333;
+            border-radius: 8px;
+            transition: background 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: #ff4500;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding-top: 2rem;
+            text-align: center;
+            color: #999;
+        }
+
+        .footer-bottom a {
+            color: #999;
+            text-decoration: none;
+            margin: 0 1rem;
+        }
+
+        .footer-bottom a:hover {
+            color: #ff4500;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about .container {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
+
 <body>
-    <header role="banner" aria-label="Ekatva Software Header">
-        <h1><span class="red">Ekatva</span> Software</h1>
-        <p>Coming soon!</p>
-    </header>
-    <div class="content">
-        <div class="tile" onclick="window.location.href='asmite.html';">
-            <h2>Asmité <small style="font-size: 0.5em;text-align: center;vertical-align:middle;">(ah-smith-ay)</small></h2>
-            <p>Decentralized information storage and ID aliasing.</p>
-            <p>Store your personal data securely in your custom storage location and use alias to browse the web.</p>
+    <nav>
+        <div class="container">
+            <a href="#" class="logo"><span class="accent">Ekatva</span> Software</a>
+            <ul class="nav-links">
+                <li><a href="#products">Products</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         </div>
-    </div>
-    <footer>
-        <p>&copy; Ekatva Software 2025</p>
-        <p>Contact us at <a href="mailto:info@ekatva.net">info@ekatva.net</a></p>
-        <p>
-            <a href="https://www.linkedin.com/in/koushik-shetty" target="_blank">LinkedIn</a> |
-            <a href="https://github.com/koushik-shetty" target="_blank">GitHub</a> |
-            <a href="https://twitter.com/koushikshettyN3" target="_blank">Twitter</a> |
-            <a href="https://www.youtube.com/@EkatvaSoftware" target="_blank">YouTube</a>
-        </p>
-        <p>
-            <a href="privacy.html">Privacy Policy</a> |
-            <a href="terms.html">Terms of Service</a>
-        </p>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Modern Software Solutions</h1>
+            <p class="subtitle">Building the future of decentralized technology and secure data management</p>
+            <a href="#products" class="cta-button">Explore Our Products</a>
+        </div>
+    </section>
+
+    <section class="products" id="products">
+        <div class="container">
+            <h2 class="section-title">Our Products</h2>
+            <div class="products-grid">
+                <div class="product-card" onclick="window.location.href='asmite.html';">
+                    <div class="icon">🔒</div>
+                    <h3>Asmité</h3>
+                    <div class="description">
+                        Decentralized information storage and ID aliasing. Store your personal data securely in your
+                        custom storage location and use aliases to browse the web with complete privacy.
+                    </div>
+                    <a href="asmite.html" class="learn-more">Learn More →</a>
+                </div>
+
+                <div class="product-card">
+                    <div class="icon">⚡</div>
+                    <h3>Coming Soon</h3>
+                    <div class="description">
+                        More innovative solutions are on the way. We're constantly working on new technologies to
+                        enhance your digital experience and privacy.
+                    </div>
+                    <a href="#" class="learn-more">Stay Tuned →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <h2>About Ekatva Software</h2>
+                <p>We're passionate about creating innovative software solutions that prioritize privacy, security, and
+                    user empowerment. Our mission is to build tools that give users complete control over their digital
+                    identity and data.</p>
+                <p>With a focus on decentralized technologies and modern web standards, we're committed to delivering
+                    products that are not only functional but also intuitive and accessible to everyone.</p>
+            </div>
+            <div class="about-image">
+                <div class="placeholder">Innovation in Progress</div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>Email: <a href="mailto:info@ekatva.net">info@ekatva.net</a></p>
+                    <p>Get in touch with us for inquiries, support, or collaboration opportunities.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/koushik-shetty" target="_blank">LinkedIn</a>
+                        <a href="https://github.com/koushik-shetty" target="_blank">GitHub</a>
+                        <a href="https://twitter.com/koushikshettyN3" target="_blank">Twitter</a>
+                        <a href="https://www.youtube.com/@EkatvaSoftware" target="_blank">YouTube</a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <p><a href="privacy.html">Privacy Policy</a></p>
+                    <p><a href="terms.html">Terms of Service</a></p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Ekatva Software. All rights reserved.</p>
+            </div>
+        </div>
     </footer>
 </body>
+
 </html>
