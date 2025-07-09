@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spoke - Multichannel Communication Platform | Ekatva Software</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #ffffff;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #e6e6e6;
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            text-decoration: none;
+        }
+
+        nav .logo .accent {
+            color: #ff4500;
+        }
+
+        nav .back-link {
+            color: #666;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav .back-link:hover {
+            color: #ff4500;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 8rem 0 4rem;
+            background: linear-gradient(135deg, #ff4500 0%, #1a1a1a 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .hero .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .hero .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            margin-bottom: 3rem;
+            font-weight: 400;
+        }
+
+        /* Content Section */
+        .content {
+            padding: 6rem 0;
+            background: #f8f9fa;
+        }
+
+        .content .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e6e6e6;
+        }
+
+        .feature-card .icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #ff4500, #1a1a1a);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            color: white;
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+        }
+
+        .feature-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .main-content {
+            background: white;
+            border-radius: 12px;
+            padding: 3rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e6e6e6;
+        }
+
+        .main-content h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: #1a1a1a;
+        }
+
+        .main-content h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 2rem 0 1rem;
+            color: #1a1a1a;
+        }
+
+        .main-content p {
+            color: #666;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .main-content ul {
+            color: #666;
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+        }
+
+        .main-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #ff4500, #1a1a1a);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+        }
+
+        .highlight-box h3 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .highlight-box p {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .cta-section {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 2rem;
+            background: #f8f9fa;
+            border-radius: 12px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: #ff4500;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 69, 0, 0.4);
+        }
+
+        .cta-button:hover {
+            background: #e63e00;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 69, 0, 0.6);
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 4rem 0 2rem;
+        }
+
+        footer .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+
+        footer .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        footer .footer-section h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #ff4500;
+        }
+
+        footer .footer-section p,
+        footer .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            line-height: 1.6;
+        }
+
+        footer .footer-section a:hover {
+            color: #ff4500;
+        }
+
+        footer .social-links {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        footer .social-links a {
+            padding: 0.5rem 1rem;
+            background: #333;
+            border-radius: 8px;
+            transition: background 0.3s ease;
+        }
+
+        footer .social-links a:hover {
+            background: #ff4500;
+        }
+
+        footer .footer-bottom {
+            border-top: 1px solid #333;
+            padding-top: 2rem;
+            text-align: center;
+            color: #999;
+        }
+
+        footer .footer-bottom a {
+            color: #999;
+            text-decoration: none;
+            margin: 0 1rem;
+        }
+
+        footer .footer-bottom a:hover {
+            color: #ff4500;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .main-content {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo"><span class="accent">Ekatva</span> Software</a>
+            <a href="index.html" class="back-link">← Back to Home</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Spoke</h1>
+            <p class="subtitle">Seamless Multichannel & Omnichannel Communication Platform</p>
+        </div>
+    </section>
+
+    <section class="content">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="icon">💬</div>
+                    <h3>Unified Messaging</h3>
+                    <p>Connect conversations across SMS, email, chat, voice, and social media channels in one unified
+                        platform.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="icon">🔄</div>
+                    <h3>Channel Switching</h3>
+                    <p>Start a conversation on one channel and seamlessly continue on another without losing context or
+                        history.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="icon">⚡</div>
+                    <h3>Real-time Sync</h3>
+                    <p>All communications are synchronized in real-time across platforms, ensuring no message is missed.
+                    </p>
+                </div>
+            </div>
+
+            <div class="main-content">
+                <h2>Communication Platform as a Service (CPaaS)</h2>
+
+                <p>Spoke revolutionizes how businesses and individuals communicate by providing a comprehensive
+                    Communication Platform as a Service (CPaaS) that breaks down the barriers between different
+                    communication channels.</p>
+
+                <div class="highlight-box">
+                    <h3>Why Spoke?</h3>
+                    <p>In today's digital world, people communicate across multiple platforms - SMS, email, social
+                        media, voice calls, and messaging apps. Spoke ensures you never miss a conversation by creating
+                        a unified communication experience that spans all channels.</p>
+                </div>
+
+                <h3>Key Features</h3>
+                <ul>
+                    <li><strong>Multichannel Support:</strong> Integrate with SMS, email, WhatsApp, Telegram, Slack,
+                        Discord, and more</li>
+                    <li><strong>Omnichannel Experience:</strong> Seamlessly switch between channels mid-conversation
+                    </li>
+                    <li><strong>Smart Routing:</strong> Automatically route messages to the most appropriate channel
+                    </li>
+                    <li><strong>Context Preservation:</strong> Maintain conversation history and context across all
+                        channels</li>
+                    <li><strong>API-First Design:</strong> Easy integration with existing systems and workflows</li>
+                    <li><strong>Analytics & Insights:</strong> Track communication patterns and optimize engagement</li>
+                </ul>
+
+                <h3>Use Cases</h3>
+                <p><strong>Customer Support:</strong> Provide seamless customer service across all communication
+                    channels, allowing customers to reach out via their preferred method and continue conversations on
+                    any other channel.</p>
+
+                <p><strong>Team Collaboration:</strong> Enable teams to communicate effectively across different
+                    platforms while maintaining project context and reducing communication silos.</p>
+
+                <p><strong>Personal Communication:</strong> Unify your personal communications across all platforms,
+                    ensuring you never miss important messages regardless of where they come from.</p>
+
+                <h3>How It Works</h3>
+                <p>Spoke acts as a central hub that connects to various communication platforms through APIs and
+                    webhooks. When a message is received on any connected channel, it's processed, analyzed for context,
+                    and made available across all other connected channels.</p>
+
+                <p>Users can respond from any channel, and Spoke ensures the message is delivered through the most
+                    appropriate medium, maintaining conversation continuity and context throughout the entire
+                    interaction.</p>
+
+                <div class="cta-section">
+                    <h3>Transform Your Communication</h3>
+                    <p>Ready to break down communication barriers and create seamless multichannel experiences?</p>
+                    <a href="mailto:info@ekatva.net" class="cta-button">Get Started with Spoke</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>Email: <a href="mailto:info@ekatva.net">info@ekatva.net</a></p>
+                    <p>Questions about Spoke? We'd love to hear from you.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Follow Development</h3>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/koushik-shetty" target="_blank">LinkedIn</a>
+                        <a href="https://github.com/koushik-shetty" target="_blank">GitHub</a>
+                        <a href="https://twitter.com/koushikshettyN3" target="_blank">Twitter</a>
+                        <a href="https://www.youtube.com/@EkatvaSoftware" target="_blank">YouTube</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Ekatva Software. All rights reserved.</p>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
