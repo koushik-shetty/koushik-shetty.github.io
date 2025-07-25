@@ -4,40 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spoke - Multichannel Communication Platform | Ekatva Software</title>
+    <title>Reticle - Unified Observability Platform | Ekatva Software</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            /* Color Variables - Black Theme */
-            --primary-bg: #000000;
-            --secondary-bg: #111111;
-            --card-bg: #1a1a1a;
-            --card-bg-hover: #222222;
-            --footer-bg: #000000;
-            --accent-color: #333333;
-            --accent-hover: #444444;
-            --accent-dark: #1a1a1a;
-
-            /* Text Colors */
-            --text-primary: #ffffff;
-            --text-secondary: #e5e5e5;
-            --text-tertiary: #d1d5db;
-            --text-muted: #999999;
-
-            /* Border Colors */
-            --border-primary: #333333;
-            --border-secondary: #444444;
-
-            /* Shadow Colors */
-            --shadow-light: rgba(0, 0, 0, 0.2);
-            --shadow-medium: rgba(0, 0, 0, 0.4);
-            --shadow-dark: rgba(0, 0, 0, 0.6);
-
-            /* Accent Shadows */
-            --accent-shadow: rgba(51, 51, 51, 0.4);
-            --accent-shadow-hover: rgba(68, 68, 68, 0.6);
-        }
-
         * {
             margin: 0;
             padding: 0;
@@ -47,8 +16,8 @@
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
-            color: var(--text-secondary);
-            background: var(--primary-bg);
+            color: white;
+            background: #000000;
         }
 
         /* Navigation */
@@ -57,9 +26,9 @@
             top: 0;
             left: 0;
             right: 0;
-            background: rgba(204, 204, 204, 0.95);
+            background: rgba(0, 0, 0, 0.95);
             backdrop-filter: blur(10px);
-            border-bottom: 1px solid #555;
+            border-bottom: 1px solid #333333;
             z-index: 1000;
             padding: 1rem 0;
         }
@@ -76,30 +45,30 @@
         nav .logo {
             font-size: 1.5rem;
             font-weight: 700;
-            color: var(--text-primary);
+            color: white;
             text-decoration: none;
         }
 
         nav .logo .accent {
-            color: var(--accent-color);
+            color: #333333;
         }
 
         nav .back-link {
-            color: var(--text-primary);
+            color: white;
             text-decoration: none;
             font-weight: 500;
             transition: color 0.3s ease;
         }
 
         nav .back-link:hover {
-            color: var(--accent-hover);
+            color: #444444;
         }
 
         /* Hero Section */
         .hero {
             padding: 8rem 0 4rem;
-            background: linear-gradient(135deg, var(--accent-color) 0%, var(--primary-bg) 100%);
-            color: var(--text-primary);
+            background: linear-gradient(135deg, #333333 0%, #000000 100%);
+            color: white;
             text-align: center;
         }
 
@@ -125,7 +94,7 @@
         /* Content Section */
         .content {
             padding: 6rem 0;
-            background: var(--secondary-bg);
+            background: #111111;
         }
 
         .content .container {
@@ -142,68 +111,68 @@
         }
 
         .feature-card {
-            background: var(--card-bg);
+            background: #1a1a1a;
             border-radius: 12px;
             padding: 2rem;
-            box-shadow: 0 2px 10px var(--shadow-medium);
-            border: 1px solid var(--border-primary);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            border: 1px solid #333333;
         }
 
         .feature-card .icon {
             width: 50px;
             height: 50px;
-            background: linear-gradient(135deg, var(--accent-color), var(--primary-bg));
+            background: linear-gradient(135deg, #333333, #000000);
             border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
             margin-bottom: 1rem;
             font-size: 1.2rem;
-            color: var(--text-primary);
+            color: white;
         }
 
         .feature-card h3 {
             font-size: 1.3rem;
             font-weight: 600;
             margin-bottom: 1rem;
-            color: var(--text-primary);
+            color: white;
         }
 
         .feature-card p {
-            color: var(--text-secondary);
+            color: white;
             line-height: 1.6;
         }
 
         .main-content {
-            background: var(--card-bg);
+            background: #1a1a1a;
             border-radius: 12px;
             padding: 3rem;
-            box-shadow: 0 2px 10px var(--shadow-medium);
-            border: 1px solid var(--border-primary);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            border: 1px solid #333333;
         }
 
         .main-content h2 {
             font-size: 2rem;
             font-weight: 600;
             margin-bottom: 1.5rem;
-            color: var(--text-primary);
+            color: white;
         }
 
         .main-content h3 {
             font-size: 1.5rem;
             font-weight: 600;
             margin: 2rem 0 1rem;
-            color: var(--text-primary);
+            color: white;
         }
 
         .main-content p {
-            color: var(--text-secondary);
+            color: white;
             margin-bottom: 1.5rem;
             line-height: 1.7;
         }
 
         .main-content ul {
-            color: var(--text-secondary);
+            color: white;
             margin-bottom: 1.5rem;
             padding-left: 1.5rem;
         }
@@ -213,15 +182,15 @@
         }
 
         .highlight-box {
-            background: linear-gradient(135deg, var(--accent-color), var(--primary-bg));
-            color: var(--text-primary);
+            background: linear-gradient(135deg, #333333, #000000);
+            color: white;
             padding: 2rem;
             border-radius: 12px;
             margin: 2rem 0;
         }
 
         .highlight-box h3 {
-            color: var(--text-primary);
+            color: white;
             margin-bottom: 1rem;
         }
 
@@ -233,43 +202,32 @@
             text-align: center;
             margin-top: 3rem;
             padding: 2rem;
-            background: var(--card-bg-hover);
+            background: #222222;
             border-radius: 12px;
-            border: 1px solid var(--border-primary);
-        }
-
-        .cta-section h3 {
-            color: var(--text-primary);
-            margin-bottom: 1rem;
-        }
-
-        .cta-section p {
-            color: var(--text-secondary);
-            margin-bottom: 1.5rem;
         }
 
         .cta-button {
             display: inline-block;
             padding: 1rem 2rem;
-            background: var(--accent-color);
-            color: var(--text-primary);
+            background: #333333;
+            color: white;
             text-decoration: none;
             border-radius: 8px;
             font-weight: 600;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px var(--accent-shadow);
+            box-shadow: 0 4px 15px rgba(51, 51, 51, 0.4);
         }
 
         .cta-button:hover {
-            background: var(--accent-hover);
+            background: #444444;
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px var(--accent-shadow-hover);
+            box-shadow: 0 6px 20px rgba(68, 68, 68, 0.6);
         }
 
         /* Footer */
         footer {
-            background: var(--footer-bg);
-            color: var(--text-primary);
+            background: #000000;
+            color: white;
             padding: 4rem 0 2rem;
         }
 
@@ -280,10 +238,10 @@
             text-align: center;
         }
 
-        footer .footer-content {
+        .footer-content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
+            gap: 3rem;
             margin-bottom: 2rem;
         }
 
@@ -291,18 +249,18 @@
             font-size: 1.2rem;
             font-weight: 600;
             margin-bottom: 1rem;
-            color: var(--accent-color);
+            color: #333333;
         }
 
         footer .footer-section p,
         footer .footer-section a {
-            color: var(--text-secondary);
+            color: #e5e5e5;
             text-decoration: none;
             line-height: 1.6;
         }
 
         footer .footer-section a:hover {
-            color: var(--accent-hover);
+            color: #444444;
         }
 
         footer .social-links {
@@ -314,30 +272,30 @@
 
         footer .social-links a {
             padding: 0.5rem 1rem;
-            background: var(--border-primary);
+            background: #333333;
             border-radius: 8px;
             transition: background 0.3s ease;
         }
 
         footer .social-links a:hover {
-            background: var(--accent-hover);
+            background: #444444;
         }
 
         footer .footer-bottom {
-            border-top: 1px solid var(--border-primary);
+            border-top: 1px solid #333333;
             padding-top: 2rem;
             text-align: center;
-            color: var(--text-muted);
+            color: #999999;
         }
 
         footer .footer-bottom a {
-            color: var(--text-muted);
+            color: #999999;
             text-decoration: none;
             margin: 0 1rem;
         }
 
         footer .footer-bottom a:hover {
-            color: var(--accent-hover);
+            color: #444444;
         }
 
         /* Responsive Design */
@@ -371,8 +329,9 @@
 
     <section class="hero">
         <div class="container">
-            <h1>Spoke</h1>
-            <p class="subtitle">Seamless Multichannel & Omnichannel Communication Platform</p>
+            <h1>Reticle</h1>
+            <p class="subtitle">Unified logs, traces, and metrics with simple dashboards and alerts that actually make
+                sense. Observability that doesn't suck for modern applications.</p>
         </div>
     </section>
 
@@ -380,79 +339,111 @@
         <div class="container">
             <div class="features-grid">
                 <div class="feature-card">
-                    <div class="icon">💬</div>
-                    <h3>Unified Messaging</h3>
-                    <p>Connect conversations across SMS, email, chat, voice, and social media channels in one unified
-                        platform.</p>
+                    <div class="icon">📊</div>
+                    <h3>Unified Dashboard</h3>
+                    <p>Single pane of glass for all your observability data. No more juggling between multiple tools to
+                        understand your system's health.</p>
                 </div>
 
                 <div class="feature-card">
-                    <div class="icon">🔄</div>
-                    <h3>Channel Switching</h3>
-                    <p>Start a conversation on one channel and seamlessly continue on another without losing context or
-                        history.</p>
+                    <div class="icon">🔍</div>
+                    <h3>Smart Correlation</h3>
+                    <p>Automatically correlate logs, metrics, and traces to quickly identify root causes and reduce mean
+                        time to resolution.</p>
                 </div>
 
                 <div class="feature-card">
                     <div class="icon">⚡</div>
-                    <h3>Real-time Sync</h3>
-                    <p>All communications are synchronized in real-time across platforms, ensuring no message is missed.
-                    </p>
+                    <h3>Real-time Alerts</h3>
+                    <p>Intelligent alerting that learns from your patterns and reduces noise. Get notified about what
+                        matters, when it matters.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="icon">📈</div>
+                    <h3>Performance Analytics</h3>
+                    <p>Deep insights into application performance with automatic SLA tracking and trend analysis across
+                        your entire stack.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="icon">🎯</div>
+                    <h3>Distributed Tracing</h3>
+                    <p>Follow requests across microservices with detailed trace visualization and performance bottleneck
+                        identification.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="icon">🔄</div>
+                    <h3>Auto-Discovery</h3>
+                    <p>Automatically discover and monitor new services, containers, and infrastructure with
+                        zero-configuration setup.</p>
                 </div>
             </div>
 
             <div class="main-content">
-                <h2>Communication Platform as a Service (CPaaS)</h2>
+                <h2>Observability That Actually Works</h2>
 
-                <p>Spoke revolutionizes how businesses and individuals communicate by providing a comprehensive
-                    Communication Platform as a Service (CPaaS) that breaks down the barriers between different
-                    communication channels.</p>
+                <p>Reticle transforms the chaotic world of application monitoring into a clear, actionable view of your
+                    system's health. We believe observability should help you understand your applications, not
+                    overwhelm you with data.</p>
 
                 <div class="highlight-box">
-                    <h3>Why Spoke?</h3>
-                    <p>In today's digital world, people communicate across multiple platforms - SMS, email, social
-                        media, voice calls, and messaging apps. Spoke ensures you never miss a conversation by creating
-                        a unified communication experience that spans all channels.</p>
+                    <h3>Why Reticle?</h3>
+                    <p>Traditional monitoring tools dump endless metrics and logs without context. Reticle intelligently
+                        connects the dots, showing you exactly what's happening in your applications and why it matters
+                        for your users.</p>
                 </div>
 
-                <h3>Key Features</h3>
+                <h3>Core Features</h3>
                 <ul>
-                    <li><strong>Multichannel Support:</strong> Integrate with SMS, email, WhatsApp, Telegram, Slack,
-                        Discord, and more</li>
-                    <li><strong>Omnichannel Experience:</strong> Seamlessly switch between channels mid-conversation
+                    <li><strong>Unified Data Collection:</strong> Logs, metrics, traces, and events in one platform</li>
+                    <li><strong>Intelligent Correlation:</strong> Automatic linking of related events across your stack
                     </li>
-                    <li><strong>Smart Routing:</strong> Automatically route messages to the most appropriate channel
+                    <li><strong>Smart Alerting:</strong> Context-aware alerts that reduce false positives by 90%</li>
+                    <li><strong>Visual Service Maps:</strong> Real-time topology visualization of your microservices
                     </li>
-                    <li><strong>Context Preservation:</strong> Maintain conversation history and context across all
-                        channels</li>
-                    <li><strong>API-First Design:</strong> Easy integration with existing systems and workflows</li>
-                    <li><strong>Analytics & Insights:</strong> Track communication patterns and optimize engagement</li>
+                    <li><strong>Custom Dashboards:</strong> Drag-and-drop dashboard builder with pre-built templates
+                    </li>
+                    <li><strong>Anomaly Detection:</strong> Machine learning-powered detection of unusual patterns</li>
+                    <li><strong>Root Cause Analysis:</strong> Automated investigation workflows to speed up
+                        troubleshooting</li>
                 </ul>
 
-                <h3>Use Cases</h3>
-                <p><strong>Customer Support:</strong> Provide seamless customer service across all communication
-                    channels, allowing customers to reach out via their preferred method and continue conversations on
-                    any other channel.</p>
-
-                <p><strong>Team Collaboration:</strong> Enable teams to communicate effectively across different
-                    platforms while maintaining project context and reducing communication silos.</p>
-
-                <p><strong>Personal Communication:</strong> Unify your personal communications across all platforms,
-                    ensuring you never miss important messages regardless of where they come from.</p>
-
                 <h3>How It Works</h3>
-                <p>Spoke acts as a central hub that connects to various communication platforms through APIs and
-                    webhooks. When a message is received on any connected channel, it's processed, analyzed for context,
-                    and made available across all other connected channels.</p>
+                <p>Reticle uses advanced correlation algorithms and machine learning to automatically understand the
+                    relationships between different parts of your system. Instead of drowning you in data, we surface
+                    the insights that matter most.</p>
 
-                <p>Users can respond from any channel, and Spoke ensures the message is delivered through the most
-                    appropriate medium, maintaining conversation continuity and context throughout the entire
-                    interaction.</p>
+                <p>Our lightweight agents and SDKs integrate with your existing infrastructure in minutes, not days.
+                    Whether you're running containers, serverless functions, or traditional VMs, Reticle adapts to your
+                    environment.</p>
+
+                <h3>Integration Ecosystem</h3>
+                <ul>
+                    <li><strong>Cloud Platforms:</strong> AWS, Google Cloud, Azure, and hybrid environments</li>
+                    <li><strong>Container Orchestration:</strong> Kubernetes, Docker Swarm, Amazon ECS</li>
+                    <li><strong>Programming Languages:</strong> Java, Python, Node.js, Go, .NET, Ruby, PHP</li>
+                    <li><strong>Databases:</strong> PostgreSQL, MySQL, MongoDB, Redis, Elasticsearch</li>
+                    <li><strong>Message Queues:</strong> Kafka, RabbitMQ, Amazon SQS, Google Pub/Sub</li>
+                    <li><strong>Web Servers:</strong> Nginx, Apache, Envoy, HAProxy</li>
+                </ul>
+
+                <h3>Benefits for Your Team</h3>
+                <p><strong>For Developers:</strong> Faster debugging with precise error tracking and performance
+                    profiling. Understand exactly how your code behaves in production.</p>
+
+                <p><strong>For DevOps:</strong> Comprehensive infrastructure monitoring with predictive scaling
+                    recommendations. Automate incident response with intelligent runbooks.</p>
+
+                <p><strong>For Product Teams:</strong> Real user monitoring and business metrics correlation. Understand
+                    how technical performance impacts user experience and business outcomes.</p>
 
                 <div class="cta-section">
-                    <h3>Transform Your Communication</h3>
-                    <p>Ready to break down communication barriers and create seamless multichannel experiences?</p>
-                    <a href="mailto:info@ekatva.net" class="cta-button">Get Started with Spoke</a>
+                    <h3>Early Access Available</h3>
+                    <p>Reticle is currently in private beta. Join our early access program to experience next-generation
+                        observability and help shape the future of application monitoring.</p>
+                    <a href="mailto:info@ekatva.net" class="cta-button">Request Early Access</a>
                 </div>
             </div>
         </div>
@@ -464,7 +455,7 @@
                 <div class="footer-section">
                     <h3>Contact</h3>
                     <p>Email: <a href="mailto:info@ekatva.net">info@ekatva.net</a></p>
-                    <p>Questions about Spoke? We'd love to hear from you.</p>
+                    <p>Questions about Reticle? We'd love to hear from you.</p>
                 </div>
 
                 <div class="footer-section">
